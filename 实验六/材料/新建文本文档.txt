@@ -1,0 +1,12 @@
+Install the hard disk into the virtual system which  is configured in Virtualbox
+# fdisk -l
+# /usr/sbin/mkfs.ext4 /dev/sdb
+# mkdir quotadir
+# touch quotadir/tt
+# mount /dev/sdb quotadir/
+# ls quotadir/
+
+# apt install quota
+# mount -o remount,usrquota,grpquota quotadir
+# /usr/sbin/quotacheck -avugn
+# /usr/sbin/quotaon -vug quotadir
